@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link href="img/ico.png" rel="shortcut icon" type="image/x-icon"/>
+   <link rel="stylesheet" href="css/main.css">
+   <title>DietLite</title>
+   <style>
+           @font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:local('Roboto Light'),local(Roboto-Light),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fCRc4EsA.woff2) format("woff2");unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:local('Roboto Light'),local(Roboto-Light),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fABc4EsA.woff2) format("woff2");unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:local('Roboto Light'),local(Roboto-Light),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fCBc4EsA.woff2) format("woff2");unicode-range:U+1F00-1FFF}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:local('Roboto Light'),local(Roboto-Light),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fBxc4EsA.woff2) format("woff2");unicode-range:U+0370-03FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:local('Roboto Light'),local(Roboto-Light),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fCxc4EsA.woff2) format("woff2");unicode-range:U+0102-0103,U+0110-0111,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:local('Roboto Light'),local(Roboto-Light),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fChc4EsA.woff2) format("woff2");unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:local('Roboto Light'),local(Roboto-Light),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fBBc4.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:local(Roboto),local(Roboto-Regular),url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format("woff2");unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:local(Roboto),local(Roboto-Regular),url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu5mxKOzY.woff2) format("woff2");unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:local(Roboto),local(Roboto-Regular),url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7mxKOzY.woff2) format("woff2");unicode-range:U+1F00-1FFF}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:local(Roboto),local(Roboto-Regular),url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4WxKOzY.woff2) format("woff2");unicode-range:U+0370-03FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:local(Roboto),local(Roboto-Regular),url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7WxKOzY.woff2) format("woff2");unicode-range:U+0102-0103,U+0110-0111,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:local(Roboto),local(Roboto-Regular),url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7GxKOzY.woff2) format("woff2");unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:local(Roboto),local(Roboto-Regular),url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:local('Roboto Medium'),local(Roboto-Medium),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCRc4EsA.woff2) format("woff2");unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:local('Roboto Medium'),local(Roboto-Medium),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fABc4EsA.woff2) format("woff2");unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:local('Roboto Medium'),local(Roboto-Medium),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCBc4EsA.woff2) format("woff2");unicode-range:U+1F00-1FFF}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:local('Roboto Medium'),local(Roboto-Medium),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBxc4EsA.woff2) format("woff2");unicode-range:U+0370-03FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:local('Roboto Medium'),local(Roboto-Medium),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCxc4EsA.woff2) format("woff2");unicode-range:U+0102-0103,U+0110-0111,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:local('Roboto Medium'),local(Roboto-Medium),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fChc4EsA.woff2) format("woff2");unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:local('Roboto Medium'),local(Roboto-Medium),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;src:local('Roboto Bold'),local(Roboto-Bold),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfCRc4EsA.woff2) format("woff2");unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;src:local('Roboto Bold'),local(Roboto-Bold),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfABc4EsA.woff2) format("woff2");unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;src:local('Roboto Bold'),local(Roboto-Bold),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfCBc4EsA.woff2) format("woff2");unicode-range:U+1F00-1FFF}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;src:local('Roboto Bold'),local(Roboto-Bold),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBxc4EsA.woff2) format("woff2");unicode-range:U+0370-03FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;src:local('Roboto Bold'),local(Roboto-Bold),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfCxc4EsA.woff2) format("woff2");unicode-range:U+0102-0103,U+0110-0111,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;src:local('Roboto Bold'),local(Roboto-Bold),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfChc4EsA.woff2) format("woff2");unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;src:local('Roboto Bold'),local(Roboto-Bold),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc4.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Roboto';font-style:normal;font-weight:900;src:local('Roboto Black'),local(Roboto-Black),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCRc4EsA.woff2) format("woff2");unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Roboto';font-style:normal;font-weight:900;src:local('Roboto Black'),local(Roboto-Black),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfABc4EsA.woff2) format("woff2");unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Roboto';font-style:normal;font-weight:900;src:local('Roboto Black'),local(Roboto-Black),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCBc4EsA.woff2) format("woff2");unicode-range:U+1F00-1FFF}@font-face{font-family:'Roboto';font-style:normal;font-weight:900;src:local('Roboto Black'),local(Roboto-Black),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfBxc4EsA.woff2) format("woff2");unicode-range:U+0370-03FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:900;src:local('Roboto Black'),local(Roboto-Black),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCxc4EsA.woff2) format("woff2");unicode-range:U+0102-0103,U+0110-0111,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Roboto';font-style:normal;font-weight:900;src:local('Roboto Black'),local(Roboto-Black),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfChc4EsA.woff2) format("woff2");unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Roboto';font-style:normal;font-weight:900;src:local('Roboto Black'),local(Roboto-Black),url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfBBc4.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+   </style>
+   <style>
+    .callBack{display: none !important;}
+    .footer{background: radial-gradient(circle farthest-side at 60% 50%,#fcee10,#ffba00) !important; color: #414141 !important;}
+   </style>
+   <script src="js/jquery.js"></script>
+<script type="text/javascript" src="script_land.js" defer></script>
+<!-- Global site tag (gtag.js) - Google Ads: 804838881 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-804838881"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-804838881');
+</script>
+    
+</head>
+<body>
+   <div class="show-btn " id="js-red-btn">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45 45" style="enable-background:new 0 0 45 45;" xml:space="preserve">
+          <circle style="fill:#FF0404;" cx="22.5" cy="22.5" r="22.5"/>
+          <polygon style="fill:#FFFFFF;" points="28,12.1 13,22 28,32 "/>
+      </svg>
+  </div>
+   <!-- HurryUp block -->
+      <div class="hurryUp" id="hurryUp">
+          <span class="hurryUp__close"></span>
+          <div class="hurryUp-left hurryUp__text">
+              KÜLÖNLEGES AJÁNLAT!
+              <b>Diet Lite 50% engedménnyel</b>
+          </div>
+          <div class="hurryUp-right hurryUp__text">
+              <b class="hurryUp__text-bold">SIESS!</b>
+              <span class="hurryUp__text-desc">Maradt csomag</span>       
+              <div class="counter js-countdown">
+                  <span class="counter__elem counter__elem1 js-count-digit">0</span>
+                  <span class="counter__elem js-count-digit">0</span>
+                  <span class="counter__elem js-count-digit">0</span>
+              </div>
+          </div>
+      </div>
+  <!-- END: HurryUp block -->
+  <div  class="navbar">
+  	<div class="navbar-contain container">
+  		<a href="#order-frame" class="navbar__button button-wrap button-wrap_sm js-to-form"><span  class="button">MEGRENDELEM&nbsp;&nbsp;<i class="arrow"></i></span></a>
+  	</div>
+  </div>
+  <section class= "primary" id="primary">
+  	<div class="primary__header">
+  		<div class="container">
+  			<div class="pr-title">
+  				<img src="img/logo.png" alt="logo" class="pr-title__logo">
+  				<h3 class="pr-title__title">A kilók olvadnak, mint a csokoládé</h3>
+  			</div>
+  		</div>
+  	</div>
+  	<div class="primary__footer">
+  		<div class="pt-top">
+  			<div class="container">
+  				<ul class="pt-top__list dignity">
+  					<li class="icon svg-pr-item dignity__item">Csökkenti az étvágyat</li>
+  					<li class="icon svg-pr-item dignity__item">Tisztítja a szervezetet</li>
+  					<li class="icon svg-pr-item dignity__item">Megszünteti a túlsúlyt</li>
+  				</ul>
+  			</div>
+  		</div>
+  		<div class="pt-center">
+  			<div class="pt-center-wrap container">
+  				<img class='pt-center__product' src="img/product1.png" alt="product">
+  				<ul class="pt-center__list pr-svg-icons">
+  					<li class="icon svg-pr-ico1"></li>
+  					<li class="icon svg-pr-ico2"></li>
+  					<li class="icon svg-pr-ico3"></li>
+  				</ul>
+  				<div class="pt-center__counter">
+  					<span class="prime-counter__text">
+  						SIESS!<br>Maradt csomag
+  					</span>
+  					<div class="counter js-countdown">
+  						<span class="counter__elem counter__elem1 js-count-digit">0</span>
+  						<span class="counter__elem js-count-digit">0</span>
+  						<span class="counter__elem js-count-digit">0</span>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  		<div class="pt-bottom tape">
+  			<div class="container">
+  				<div class="pt-bottom__form pt-form-block">
+  					<div class="timer">
+  						<span class="timer__title">
+  							Az akció végéig maradt
+  						</span>
+  						<div class="timer-wrap">
+  							<div class="timer__item hours">00</div>&nbsp;:&nbsp;<div class="timer__item minutes">00</div>&nbsp;:&nbsp;<div class="timer__item timer__item_color seconds">00</div> 
+  						</div>
+  					</div>
+  					<div id="order-form1"  class="order">
+  						<div  class="order-head">
+  						<div class="discount"></div>
+  						<div class="price bb">
+  							<div class="price__old  price__old-crossed">
+  								<span class="al-raw-currency price__old-currency">Ft</span>
+  								<span class="al-raw-cost-promo price__old-cost">19400</span>
+  							</div>
+  							<div class="price__new">
+  								<span class="al-raw-currency price__new-currency">Ft</span>
+  								<span class="al-raw-cost price__new-cost">9700</span>
+  							</div>
+  						</div>
+  						<h4 class="order__title">TÖLTSE KI AZ ADATLAPOT ÉS MI FELVESSZÜK ÖNNEL A KAPCSOLATOT</h4>
+  						</div>
+  					<style>
+					.frame iframe {
+					 width: 100%;
+					 height: 245px;
+					}
+					</style>
+					<div class="frame"><iframe id="form" src="https://soloniard.ru" ></iframe></div>
+  					</div>
+  				</div>
+  				<ul class="tape-list">
+  					<li class="tape__item1">DIÉTÁK</li>
+  					<li class="tape__item2">SPORT</li>
+  					<li class="tape__item3">MŰTÉTEK</li>
+  				</ul>
+  			</div>
+  		</div>
+  	</div>
+  </section>
+  <section class= "hate">
+  	<div class="container">
+  		<div class="hate__left wikipedia">
+  			<div class="wikipedia__img globe">
+  				<img src="img/wiki.png" alt="wikipedia">
+  			</div>
+  			<div class="wikipedia__text">
+  				<h4>WIKIPÉDIA</h4>
+  				<span>Ingyenes enciklopédia</span>
+  				<p>“Ha a súlya több mint 10% -kal meghaladja a normát, akkor a stroke, a koszorúér-elégtelenség és egyéb szívbetegségek valószínűsége növekedni fog”</p>
+  			</div>
+  		</div>
+  		<div class="hate__right ht-block">
+  			<h3 class="ht-block__title">UTÁLOD MAGAD?</h3>
+  			<ul class="ht-block__list ht-question">
+  				<li class="ht-question__item1 icon svg-hate-ico1">Belefáradtál a gúnyolódásokba?</li>
+  				<li class="ht-question__item2 icon svg-hate-ico2">Állandó frusztráció?</li>
+  				<li class="ht-question__item3 icon svg-hate-ico3">Belefáradt, hogy egyedül van?</li>
+  			</ul>
+  		</div>
+  	</div>
+  </section>
+  <section class= "insert ins-top">
+  	<div class="container">
+  		<img class="insert__product" src="img/product2.png" alt="product">
+  		<h3>Égesd el a kalóriákat  Diet Lite - al!</h3>
+  		<a href="#order-frame" class="button-wrap insert__btn js-to-form">
+  			<span class="button ">ELÉGETNI&nbsp;&nbsp;<i class="arrow"></i>
+  			</span>
+  		</a>
+  	</div>
+  </section>
+  <section class="effect" id="effect">
+  		<h3>EGYFORMA IZ - KÜLÖNBÖZŐ EREDMÉNY</h3>
+  		<div class="effect__top pictures">
+  			<img class="pictures__img" src="img/effect-girl.png" alt="">
+  			<div class="pictures__item1 pictures-animate" data-paroller-factor="0.2" data-paroller-type="foreground"></div>
+  			<div class="pictures__item2 pictures-animate" data-paroller-factor="-0.2" data-paroller-type="foreground"></div>
+  			<div class="pictures__item3 pictures-animate" data-paroller-factor="-0.1" data-paroller-type="foreground"></div>
+  			<div class="pictures__item4 pictures-animate" data-paroller-factor="0.15" data-paroller-type="foreground"></div>
+  			<div class="pictures__item5 pictures-animate" data-paroller-factor="0.1" data-paroller-type="foreground"></div>
+  		</div>
+  		<div class="effect__bottom">
+  			<div class="container wrap">
+  				<div class="compare" id="compare">
+  					<div class="compare-wrap">
+  						<div class="compare__item ef-sweets" id="left-block">
+  							<h5>Szokásos<br>édességek:</h5>
+  							<ul>
+  								<li class="ef-sweets__item">hozzájárulnak az elhízáshoz</li>
+  								<li class="ef-sweets__item">cukorbetegséget okoznak</li>
+  								<li class="ef-sweets__item">megzavarják a szív működését</li>
+  								<li class="ef-sweets__item">lassítják az anyagcserét</li>
+  								<li class="ef-sweets__item">csökkentik az immunitást</li>
+  							</ul>
+  							<h5>LASSÚ HALÁL...</h5>
+  						</div>
+  						<div class="compare__item ef-product" id="right-block">
+  							<h2>Diet Lite:</h2>
+  							<ul>
+  								<li class="ef-product__item">tisztítja a szervezetet</li>
+  								<li class="ef-product__item">megindítja az anyagcserét</li>
+  								<li class="ef-product__item">növeli a test tónusát</li>
+  								<li class="ef-product__item">energiát biztosít</li>
+  								<li class="ef-product__item">elősegíti a fogyást</li>
+  							</ul>
+  							<h5>KEZDJ ÚJ ÉLETET!</h5>
+  							<a href="#order-frame" class="button-wrap ef-product__btn js-to-form">
+  								<span class="button">ELKEZDENI&nbsp;&nbsp;<i class="arrow"></i></span>
+  							</a>
+  						</div>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  </section>
+  <section class="telephone" id="telephone">
+  	<div class="container telephone-wrap">
+  		<div class="telephone-left">
+  			<div class="telephone-title">
+  				<h5>
+  					Vannak kérdései?
+  				</h5>
+  				<p>
+  					<h5>INGYENES</h5>
+            Szakértői konzultáció
+  				</p>
+  			</div>
+  		</div>
+  		<div class="telephone-right">
+  			<div class="phone">
+  				<i class="phone__img"></i>
+  				<span class="phone__circle-internal"></span>
+  				<span class="phone__circle-external-1"></span>
+  				<span class="phone__circle-external-2"></span>
+  			</div>
+  		</div>
+  	</div>
+  	<img src="img/telephone-img.png" alt="">
+  </section>
+  <section class="consist">
+  	<div class="container">
+  		<h3 class="consist__title">
+  			HOGYAN MŰKÖDIK A DIET LITE
+  		</h3>
+  	</div>
+  		<div class="container consist-wrap">
+  			<div class="consist__left">
+  				<div class="cocktail">
+  				<h6 class="cocktail__title">Készítsd el a saját koktélod</h6>
+  				<p class="cocktail__text">
+  					A <strong>Diet Lite-al</strong> a táplálkozásod  mindig teljes lesz. Adj hozzá saját összetevőket, kísérletezz az ízekkel!
+  				</p>
+  				<p class="cocktail__text">Készítsd el a koktélt: oldd fel 1 adag Diet Lite-ot  250 ml  vízben vagy tejben. Add hozzá a  kedvenc bogyókat és gyümölcsöket, nagyszerű hangulatot teremtve. Töltsd fel magad  energiával egész napra.</p>
+  				<a href="#order-frame" class="cocktail__button button-wrap js-to-form">
+  					<span class="button">MEGRENDELEM&nbsp;&nbsp;<i class="arrow"></i>
+  					</span>
+  				</a>
+  			</div>
+  			</div>
+  			<div class="consist__right">
+  				<ul class="ingredient">
+  					<li class="ingredient__item icon svg-ingr-ico1">
+  						<h6>Kakaópor</h6>
+  						<p>Lebontja a zsírsejteket, elősegíti az "öröm" hormon termelését</p>
+  					</li>
+  					<li class="ingredient__item icon svg-ingr-ico2">
+  						<h6>Barna rizs fehérje</h6>
+  						<p>Telíti a szervezetet aminosavakkal, energetizál.</p>
+  					</li>
+  					<li class="ingredient__item icon svg-ingr-ico3">
+  						<h6>Spirulina kivonat</h6>
+  						<p>Felgyorsítja az anyagcserét, eltávolítja a toxinokat, serkenti a fogyást</p>
+  					</li>
+  					<li class="ingredient__item icon svg-ingr-ico4">
+  						<h6>Organikus borsófehérje</h6>
+  						<p>Csökkenti az étvágyat, növeli az immunitást és normalizálja az anyagcserét</p>
+  					</li>
+  				</ul>
+  			</div>
+  		</div>
+  	<img class="consist__product" src="img/product1.png" alt="product">
+  </section>
+  <section class="expert">
+  	<div class="container">
+  		<img class="expert__img" src="img/expert-girl.png" alt="expert">
+  		<div class="expert__left ex-block">
+  			<h3 class="ex-block__title">A szakértő javasolja:</h3>
+  			<p>“Még néhány évvel ezelőtt túlsúllyal szenvedtem! A <strong>Diet Lite-nak</strong> köszönhetően tudtam helyre hozni az anyagcserémet,  20 kg fogytam és végre elkezdtem  sportolni.</p>
+  			<p>Ma minden ügyfelemnek javaslom a  természetes <strong>Diet Lite-t</strong> koktélt. Először aktivizálja az anyagcserét és gyorsan megszabadul a felesleges zsírpárnáktól. Utána feltölti a testét energiával, majd edzi az izmokat.”</p>
+  			<div class="ex-block__autor">
+  				<span>Rúd Márta</span><br>
+  				Fitness edző, az elhízás elleni küzdelem szakértője
+  			</div>
+  		</div>
+  		<div class="expert__right quote">
+  			<img src="img/quote-img.jpg" alt="">
+  			<div class="quote__text">
+  				<strong>Anna, 33 éves</strong>
+  				<p>Imádom a csokoládét, így soha nem tudtam diétázni. Martához fordultam, aki azt tanácsolta nekem, hogy csináljam  végig a <b>Diet Lite</b> kúrát. Rögtön beleszerettem az izébe és sikerült  ledobnom majdnem az összes felesleges kilóimat</p>
+  			</div>
+  		</div>
+  	</div>
+  </section>
+  <section class= "insert ins-center">
+  	<div class="container">
+  		<img class="insert__product" src="img/product2.png" alt="product">
+  		<h3>Aktivizáld az anyagcserédet</h3>
+  		<a href="#order-frame" class="button-wrap insert__btn js-to-form">
+  			<span class="button">AKTIVIZÁLNI&nbsp;&nbsp;<i class="arrow"></i>
+  			</span>
+  		</a>
+  	</div>
+  </section>
+  <section class="comments" id="comments">
+  	<div class="container">
+  		<h3 class="comments__title">Vélemények</h3>
+  		<div class="comments-list">
+  			<div class="comments__item1 comment">
+  				<span class="comment__img1"></span>
+  				<div class="comment-block">
+  					<h6>Veronika, 34</h6>
+  					<p>Szülés után felszedtem 19 kg. Még mindig abban a rémálomban élnék, ha nem lett volna <strong>Diet Lite</strong>. Fiatal anyukák,  a fogyás lehetséges!</p>
+  				</div>
+  			</div>
+  			<div class="comments__item2 comment">
+  				<span class="comment__img2"></span>
+  				<div class="comment-block">
+  					<h6>Diána, 28</h6>
+  					<p>A csokoládés <strong>Diet Lite</strong> teljesen helyettesítette az összes szokásos édességget. Ezzel  a koktéllal végül 15 kg - al csökkent a súlyom  és továbbra is folytatom a fogyást!</p>
+  				</div>
+  			</div>
+  			<div class="comments__item3 comment">
+  				<span class="comment__img3"></span>
+  				<div class="comment-block">
+  					<h6>Ramóna, 41</h6>
+  					<p>A munkahelyemen mindig is “pufi Ramóna” voltam.Édes üdítők helyett elkezdtem inni a <strong>Diet Lite - ot</strong>, és most “nádszál Ramóna” vagyok.</p>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  </section>
+  <section class= "insert ins-bottom">
+  	<div class="container">
+  		<img class="insert__product" src="img/product2.png" alt="product">
+  		<h3>Ne pazarold az időt. Foggyál a Diet Lite-al!</h3>
+  		<a href="#order-frame" class="button-wrap insert__btn js-to-form">
+  			<span class="button">LEFOGYNI&nbsp;&nbsp;<i class="arrow"></i>
+  			</v>
+  		</a>
+  	</div>
+  </section>
+  <section  class="steps">
+  	<div class="container">
+  		<h3 class="steps__title">
+  			4 lépés a fogyáshoz
+  		</h3>
+  		<ul class="steps__list st-block">
+  			<li class="st-block__item1">
+  				<i class="icon svg-step-ico1"></i>
+  				<h6>Egyszerű</h6>
+  				<p>Töltse ki az adatlapot és a tanácsadónk visszahívja Önt</p>
+  			</li>
+  			<li class="st-block__item2">
+  				<i class="icon svg-step-ico2"></i>
+  				<h6>Kényelmes</h6>
+  				<p>A tanácsadó kiválaszt Önnek egy személyre szabott kúrát</p>
+  			</li>
+  			<li class="st-block__item3">
+  				<i class="icon svg-step-ico4"></i>
+  				<h6>Gyors</h6>
+  				<p>Mi azonnal intézkedünk és küldjük a megrendelését</p>
+  			</li>
+  			<li class="st-block__item4">
+  				<i class="icon svg-step-ico3"></i>
+  				<h6>Biztonságos</h6>
+  				<p>Kifizetni az árut a csomag kézhezvételekor kel</p>
+  			</li>
+  		</ul>
+  	</div>
+  </section>
+  <section class= "primary primary_last" id="primary_last">
+  	<div class="primary__header">
+  		<div class="container">
+  			<div class="pr-title">
+  				<img src="img/logo.png" alt="logo" class="pr-title__logo">
+  				<h3 class="pr-title__title">A kilók olvadnak, mint a csokoládé</h3>
+  			</div>
+  		</div>
+  	</div>
+  	<div class="primary__footer">
+  		<div class="pt-top">
+  			<div class="container">
+  				<ul class="pt-top__list dignity">
+  					<li class="icon svg-pr-item dignity__item">Csökkenti az étvágyat</li>
+  					<li class="icon svg-pr-item dignity__item">Tisztítja a szervezetet</li>
+  					<li class="icon svg-pr-item dignity__item">Megszünteti a túlsúlyt</li>
+  				</ul>
+  			</div>
+  		</div>
+  		<div class="pt-center">
+  			<div class="pt-center-wrap container">
+  				<img class='pt-center__product' src="img/product1.png" alt="product">
+  				<ul class="pt-center__list pr-svg-icons">
+  					<li class="icon svg-pr-ico1"></li>
+  					<li class="icon svg-pr-ico2"></li>
+  					<li class="icon svg-pr-ico3"></li>
+  				</ul>
+  				<div class="pt-center__counter">
+  					<span class="prime-counter__text">
+  						SIESS!<br>Maradt csomag 
+  					</span>
+  					<div class="counter js-countdown">
+  						<span class="counter__elem counter__elem1 js-count-digit">0</span>
+  						<span class="counter__elem js-count-digit">0</span>
+  						<span class="counter__elem js-count-digit">0</span>
+  					</div>
+  				</div>
+  			</div>
+  		</div>
+  		<div class="pt-bottom tape">
+  			<div class="container">
+  				<div class="pt-bottom__form pt-form-block">
+  					<div class="timer">
+  						<span class="timer__title">
+  							Az akció végéig maradt
+  						</span>
+  						<div class="timer-wrap">
+  							<div class="timer__item hours">00</div>&nbsp;:&nbsp;<div class="timer__item minutes">00</div>&nbsp;:&nbsp;<div class="timer__item timer__item_color seconds">00</div> 
+  						</div>
+  					</div>
+  					<div id="order-form2"  class="order">
+  						<div  class="order-head">
+  						<div class="discount"></div>
+  						<div class="price bb">
+  							<div class="price__old  price__old-crossed">
+                  <span class="al-raw-currency price__old-currency">Ft</span>
+                  <span class="al-raw-cost-promo price__old-cost">19400</span>
+                </div>
+                <div class="price__new">
+                  <span class="al-raw-currency price__new-currency">Ft</span>
+                  <span class="al-raw-cost price__new-cost">9700</span>
+                </div>
+  						</div>
+  						<h4 class="order__title">TÖLTSE KI AZ ADATLAPOT ÉS MI FELVESSZÜK ÖNNEL A KAPCSOLATOT</h4>
+  						</div>
+  						<style>
+					.frame iframe {
+					 width: 100%;
+					 height: 245px;
+					}
+					</style>
+				<a id=order-frame></a>	<div class="frame"><iframe id="form" src="https://soloniard.ru" ></iframe></div>
+  					</div>
+  				</div>
+  		</div>
+  	</div>
+  </section>  
+  <script src="js/main.js"></script>
+  
+  <script src="js/app.js"></script> 
+  
+</body>
+</html
